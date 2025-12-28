@@ -18,6 +18,7 @@
   "build": {
     "win": {
       "target": [
+        "nsis",
         "portable"
       ]
     },
