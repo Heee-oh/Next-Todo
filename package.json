@@ -1,0 +1,57 @@
+{
+  "name": "next-step-todo",
+  "version": "1.0.0",
+  "description": "Only Next Day Todo App",
+  "main": "build/electron.js",
+  "author": "Heee-oh",
+  "homepage": "./",
+  "scripts": {
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "postinstall": "electron-builder install-app-deps",
+    "electron": "electron public/electron.js",
+    "dev": "concurrently -k \"npm start\" \"npm run electron\"",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Heee-oh",
+        "repo": "Next-Todo"
+      }
+    ]
+  },
+  "dependencies": {
+    "electron-is-dev": "^1.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "sequelize": "^6.6.5",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1",
+    "electron": "^28.2.4",
+    "electron-builder": "^26.0.12"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

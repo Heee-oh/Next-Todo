@@ -1,0 +1,210 @@
+.Widget {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 12px;
+  height: 100vh;
+  width: 100%;
+  /* 창 전체 너비 사용 */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+
+}
+
+.Widget-header {
+  display: flex;
+  flex-direction: row;
+  /* 세로에서 가로로 변경 */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-app-region: drag;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #888;
+  cursor: pointer;
+  margin-left: 8px;
+  -webkit-app-region: no-drag;
+  padding: 0 4px;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #e74c3c;
+}
+
+.Widget.expanded {
+  width: 100%;
+}
+
+.Widget-header h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.Widget-panels {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: calc(100% - 40px);
+}
+
+.Widget-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: #f4f6fa;
+  border-radius: 10px;
+  margin-bottom: 10px;
+
+  -webkit-app-region: drag;
+}
+
+.Widget-panels {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.Widget-panel {
+  flex: 1;
+  /* ← 같이 늘어남 */
+  min-width: 0;
+  /* ← 스크롤 방지 핵심 */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.arrow-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #007aff;
+  padding: 0 8px;
+  z-index: 2;
+  -webkit-app-region: no-drag;
+  transition: color 0.2s;
+
+  .Widget-list li input[type="checkbox"] {
+    margin-right: 6px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.arrow-btn:hover {
+  color: #005bb5;
+}
+
+.add-todo input[type="text"],
+.todo-edit-input {
+  flex: 1;
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 11px;
+  height: 24px;
+  min-width: 0;
+}
+
+
+
+.tomorrow-panel {
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.add-todo button:hover,
+.small-btn:hover {
+  background: #005bb5;
+}
+
+.Widget-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.Widget-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.Widget-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.add-todo {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.add-todo input[type="text"] {
+  flex: 1;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.add-todo button {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  background: #007aff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.add-todo button:hover {
+  background: #005bb5;
+}
+
+/* Remove duplicate .Widget-header rule */
+
+.Widget-header h2 {
+  margin: 0;
+  font-size: 18px;
+  cursor: default;
+}
+
+
+
+
+.Widget-list li input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.Widget-list li.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.open-app-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #007aff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
